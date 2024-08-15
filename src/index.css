@@ -1,0 +1,21 @@
+:root {
+  --white: #ffffff;
+  --primary: #f59e0b;
+  --black: #000000;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  background-image: url("/clouds.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: var(--black);
+  font-size: 2rem;
+}
