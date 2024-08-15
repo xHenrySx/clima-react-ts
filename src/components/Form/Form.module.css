@@ -2,15 +2,15 @@
 .field {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 2rem;
 }
 
-.form input[type="text"],
-.form select {
+.form input[type="text"]{
+  appearance: none;
   padding: 1rem;
-  background-color: transparent;
-  border: 0.3rem solid var(--black);
-  color: var(--black);
+  border: none;
   font-size: 1.8rem;
   font-weight: 400;
   border-radius: 1rem;
@@ -21,13 +21,9 @@
   font-weight: 700;
 }
 
-.field ::placeholder {
-  color: var(--black);
-}
-
 .form input[type="text"]:focus-visible,
 .form select:focus-visible {
-  outline: rgb(64, 203, 224) auto 0.3rem;
+  outline: none;
 }
 
 .submit {

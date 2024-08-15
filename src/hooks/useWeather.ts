@@ -35,9 +35,9 @@ export default function useWeather() {
   const fetchWeather = async (search: SearchType) => {
     setLoading(true);
     try {
-      const { city, country } = search;
+      const { city } = search;
       const { data } = await axios(
-        `${GEOCODING_URL}q=${city},${country}&appid=${
+        `${GEOCODING_URL}q=${city}&appid=${
           import.meta.env.VITE_WEATHER_API_KEY
         }`
       );

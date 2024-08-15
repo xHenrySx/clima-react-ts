@@ -1,7 +1,5 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 
-import { countries } from "../../data/countries";
-
 import type { SearchType } from "../../types";
 
 import InputErrorMessage from "../InputErrorMessage/InputErrorMessage";
@@ -13,8 +11,7 @@ interface FormProps {
 
 export default function Form({ fetchWeather }: FormProps) {
   const [search, setSearch] = useState<SearchType>({
-    city: "",
-    country: "",
+    city: ""
   });
   const [error, setError] = useState("");
 
@@ -34,6 +31,7 @@ export default function Form({ fetchWeather }: FormProps) {
       return;
     }
 
+    setError("");
     fetchWeather(search);
   };
 
@@ -41,7 +39,6 @@ export default function Form({ fetchWeather }: FormProps) {
     <form className={styles.form} onSubmit={handleSubmit}>
       {error && <InputErrorMessage>{error}</InputErrorMessage>}
       <div className={styles.field}>
-        <label htmlFor="city">Ciudad:</label>
         <input
           type="text"
           id="city"
@@ -51,23 +48,7 @@ export default function Form({ fetchWeather }: FormProps) {
           onChange={handleChange}
         />
       </div>
-      <div className={styles.field}>
-        <label htmlFor="country">País:</label>
-        <select
-          name="country"
-          id="country"
-          value={search.country}
-          onChange={handleChange}
-        >
-          <option value="">--Seleccione--</option>
-          {countries.map((country) => (
-            <option key={country.code} value={country.code}>
-              {country.name}
-            </option>
-          ))}
-        </select>
-      </div>
-      <input className={styles.submit} type="submit" value="Consultar Clima" />
+      <input className={styles.submit} type="submit" value="Consultar" />
     </form>
   );
 }
